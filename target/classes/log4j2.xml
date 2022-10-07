@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Appenders>
+        <Console name="myConsole" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy:MMM-dd HH:mm:ss} [%t] %-5level %-50c{1.} - %msg%n" />
+        </Console>
+        <File name="myFile" fileName="generatedLogFile">
+			<PatternLayout pattern="%d [%t] %-5level %-50c{1.} - %msg %m"/>
+		</File>
+    </Appenders>
+
+    <Loggers>
+        <Root level="debug">
+            <AppenderRef ref="myConsole" />
+            <AppendersRef ref = "myFile"/>
+        </Root>
+    </Loggers>
+</Configuration>
+
